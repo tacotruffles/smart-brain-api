@@ -11,7 +11,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      POSTGRES_URI: postgres://tacotruffles:secret@postgres:5432/smart-brain-docker
+      POSTGRES_URI: URI_HERE
       CLARIFAI_API_KEY: 028f69d843ad4c36b4898fc1978509ab
     links:
       - postgres
@@ -23,8 +23,8 @@ services:
     environment:
       POSTGRES_HOST: postgres
       POSTGRES_DB: smart-brain-docker
-      POSTGRES_USER: tacotruffles
-      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: USERNAME_HERE
+      POSTGRES_PASSWORD: PASSWORD_HERE
     # container_name: postgres
     image: postgres
     ports:
