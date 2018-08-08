@@ -26,6 +26,6 @@ services:
       POSTGRES_USER: tacotruffles
       POSTGRES_PASSWORD: secret
     # container_name: postgres
-    image: postgres
+    build: ./postgres
     ports:
       - "5432:5432"
