@@ -1,14 +1,26 @@
 # SmartBrain-api - v2
-Final project for Udemy course
+Basic multi-face image recognition API
 
 1. Clone this repo
-2. Run `npm install`
-3. Run `npm start`
+2. Run `yarn`
+3. Run `yarn start`
 4. You must add your own API key in the `controllers/image.js` file to connect to Clarifai API.
 
 You can grab Clarifai API key [here](https://www.clarifai.com/)
 
 ** Make sure you use postgreSQL instead of mySQL for this code base.
+
+```
+cp .env.temp .env
+```
+.env file
+```
+POSTGRES_HOST=
+POSTGRES_DB=
+POSTGRES_USER=
+POSTGRESS_PASSWORD=
+CLARIFAI_API_KEY=
+```
 
 ```
 createdb smart-brain
