@@ -12,9 +12,12 @@ services:
       - "3000:3000"
     environment:
       POSTGRES_URI: postgres://tacotruffles:secret@postgres:5432/smart-brain-docker
+      REDIS_URI: redis://redis:6379
       CLARIFAI_API_KEY: 028f69d843ad4c36b4898fc1978509ab
+      JWT_SECRET: "hansololoveschewie"
     links:
       - postgres
+      - redis
     volumes:
       - ./:/usr/src/smart-brain-api
 
@@ -29,3 +32,10 @@ services:
     build: ./postgres
     ports:
       - "5432:5432"
+
+  # Redis
+  redis:
+    container_name: redis-server
+    build: ./redis
+    ports: 
+      - "6379:6379"
