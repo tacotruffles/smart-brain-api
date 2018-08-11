@@ -71,5 +71,6 @@ const handleAuthentication = (db, bcrypt) => (req, res) => {
 }
 
 module.exports = {
-    handleAuthentication: handleAuthentication
+    handleAuthentication: handleAuthentication,
+    redisClient: redisClient
 }
