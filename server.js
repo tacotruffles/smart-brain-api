@@ -1,5 +1,7 @@
 require('dotenv').config();
 const express = require('express');
+const compression = require('compression');
+const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
@@ -27,9 +29,12 @@ const db = knex({
 
 const app = express();
 
+app.use(helmet());
 app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyParser.json());
+app.use(compression());
+
 
 app.get('/', (req, res) => { res.send("API IS RUNNING") });
 app.post('/signin', signin.handleAuthentication(db, bcrypt));
